@@ -1,0 +1,39 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CMAKE_BUILD_PARALLEL_LEVEL: 2
+      ROS_AUTOMATIC_DISCOVERY_RANGE: LOCALHOST
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check publication files and relay configuration
+        run: |
+          python3 tools/check_publication.py
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          find scripts -name '*.sh' -exec bash -n {} \;
+      - uses: ros-tooling/setup-ros@0.7.19
+        with:
+          required-ros-distributions: jazzy
+      - name: Install dependencies and fetch pinned runtime
+        run: bash scripts/install-deps.sh
+      - name: Build and test upstream and camera adapter
+        run: bash scripts/build-test.sh
+      - name: Virtual CAN E2E and synthetic JPEG replay when supported
+        shell: bash
+        run: |
+          sudo modprobe vcan || true
+          sudo ip link add dev vcan0 type vcan || true
+          if sudo ip link set vcan0 up; then
+            bash scripts/demo.sh
+            source scripts/env.sh
+            python3 tests/replay_smoke.py
+          else
+            echo '::notice::SKIP vcan E2E/replay: runner has no usable vcan support'
+          fi

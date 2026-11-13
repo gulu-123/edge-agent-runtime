@@ -1,0 +1,22 @@
+{
+  "board": {
+    "target": "root@rk3568.local",
+    "identity_file": "~/.ssh/rk3568_ecdsa",
+    "known_hosts_file": "~/.ssh/known_hosts"
+  },
+  "runtime": {
+    "target": "user@ubuntu-vm.local",
+    "identity_file": "~/.ssh/id_ed25519",
+    "known_hosts_file": "~/.ssh/known_hosts",
+    "project_dir": "/home/user/projects/rk3568-vision-runtime"
+  },
+  "camera": {
+    "device": "/dev/video1",
+    "input_width": 1920,
+    "input_height": 1080,
+    "output_width": 960,
+    "output_height": 540,
+    "fps": 5,
+    "jpeg_quality": 80
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>remote_camera_adapter</name>
+  <version>0.1.0</version>
+  <description>MJPEG stdin input for the upstream perception task adapter.</description>
+  <maintainer email="209094034+gulu-123@users.noreply.github.com">gulu-123</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_action</depend>
+  <depend>robot_task_interfaces</depend>
+  <depend>perception_task_adapter</depend>
+  <depend>libopencv-dev</depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

@@ -1,0 +1,37 @@
+# Local development notes and one-off migration tools
+/vm-tools/
+# Downloaded upstream checkout and generated state
+/repo/
+/cache/
+/logs/
+/runs/
+/config/local/
+**/build/
+**/install/
+**/log/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+# Credentials, connection settings, and raw captures
+*.local.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+**/id_rsa*
+**/id_ecdsa*
+**/id_ed25519*
+**/authorized_keys
+**/known_hosts
+*.nv12
+*.mjpg
+*.sqlite3*
+*.log
+*.tar
+*.tar.gz
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

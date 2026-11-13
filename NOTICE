@@ -1,0 +1,14 @@
+RK3568 Vision Runtime
+Copyright 2026 gulu-123
+
+This project provides an independent remote-camera adapter and integration
+scripts for Quchaosheng/embodied-agent-runtime:
+https://github.com/Quchaosheng/embodied-agent-runtime
+Pinned upstream commit: 93a30014b0a260c92a1d3593889afb6dec94e257
+Upstream license: Apache License 2.0.
+
+Runtime orchestration, ROS 2 interfaces, CAN protocol handling, task history,
+and the original ArUco trigger policy belong to the upstream project.
+The runtime launch sequences in this project's scripts were adapted from
+the upstream software E2E setup; they have been changed for image and live
+camera validation. The upstream source is fetched separately, not vendored.
