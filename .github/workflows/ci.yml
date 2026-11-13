@@ -1,6 +1,7 @@
 name: CI
 on:
   push:
+    branches: [main]
   pull_request:
 permissions:
   contents: read
@@ -31,7 +32,7 @@ jobs:
           sudo modprobe vcan || true
           sudo ip link add dev vcan0 type vcan || true
           if sudo ip link set vcan0 up; then
-            bash scripts/demo.sh
+            RUNTIME_E2E_ORCHESTRATOR_CANCEL_MS=3000 bash scripts/demo.sh
             source scripts/env.sh
             python3 tests/replay_smoke.py
           else
