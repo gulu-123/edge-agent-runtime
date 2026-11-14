@@ -1,15 +1,16 @@
-# RK3568 Vision Runtime
+# Edge Agent Runtime
 
-[![CI](https://github.com/gulu-123/rk3568-vision-runtime/actions/workflows/ci.yml/badge.svg)](https://github.com/gulu-123/rk3568-vision-runtime/actions/workflows/ci.yml)
+[![CI](https://github.com/gulu-123/edge-agent-runtime/actions/workflows/ci.yml/badge.svg)](https://github.com/gulu-123/edge-agent-runtime/actions/workflows/ci.yml)
 [![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-22314E?logo=ros)](https://docs.ros.org/en/jazzy/)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus)](adapters_ws/src/remote_camera_adapter)
 [![RK3568 + OV5695](https://img.shields.io/badge/Hardware-RK3568_%2B_OV5695-2E7D32)](docs/validation.md)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-**把 RK3568 上的真实摄像头画面接入 ROS 2 任务运行时，完成标记确认、任务执行和结果追踪。**
+**面向具身智能的边缘任务执行与视觉接入框架，基于 ROS 2，集成受控工作流、设备协议交互与任务追踪。**
 
-An RK3568/OV5695 remote-camera integration for a pinned ROS 2 task runtime,
-with a C++ MJPEG adapter and reproducible image/live-stream validation.
+Edge task execution and remote vision integration for embodied-agent systems,
+built on a pinned ROS 2 runtime. Validated with RK3568/OV5695, a C++ MJPEG
+adapter and reproducible image/live-stream experiments.
 
 ## 项目做什么
 
@@ -78,8 +79,8 @@ Ubuntu 24.04 / ROS 2 Jazzy 虚拟机完成真实视觉实验：
 在 Ubuntu 运行端执行：
 
 ```bash
-git clone https://github.com/gulu-123/rk3568-vision-runtime.git
-cd rk3568-vision-runtime
+git clone https://github.com/gulu-123/edge-agent-runtime.git
+cd edge-agent-runtime
 bash scripts/install-deps.sh
 bash scripts/build-test.sh
 bash scripts/setup-vcan.sh
